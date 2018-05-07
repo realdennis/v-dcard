@@ -5,11 +5,17 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import Home from './components/HelloFromVux'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.use(VueRouter)
+Vue.use(VueAxios,axios)
 
 const routes = [{
   path: '/',
+  component: Home
+},{
+  path: '/:board',
   component: Home
 }]
 
