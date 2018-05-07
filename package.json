@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fastclick": "^1.0.6",
+    "iview": "^2.13.1",
     "vue": "^2.5.2",
     "vue-axios": "^2.1.1",
     "vue-router": "^3.0.1",

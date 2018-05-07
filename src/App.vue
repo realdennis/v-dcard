@@ -17,74 +17,35 @@
 	width="200px;"
 	:show.sync="drawerVisibility"
 	show-mode="push"
-	:drawer-style="{'background-color':'rgb(0, 45, 70)', width: '70vw','overflow':'scroll','padding-top':'46px'}">
-
+	:drawer-style="{'-webkit-overflow-scrolling':'touch','background-color':'rgb(0, 45, 70)', width: '70vw','overflow':'scroll','padding-top':'46px'}">
 	<!-- drawer content -->
 		<div slot="drawer" >
 			<ul>
 				<li>
-					<router-link to="/" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >全部</router-link>
+					<router-link class="forum" to="/" @click.native="drawerVisibility = false" >全部</router-link>
 				</li>
 				<li>
-					<a href="https://github.com/realdennis" @click="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >Github</a>
+					<a class="forum" href="https://github.com/realdennis" @click="drawerVisibility = false" >Github</a>
 				</li>
 			</ul>
-			<br>
-				<p style="color:hsla(0,0%,100%,.6)">分類看板</p>
-		  	<ul>
-				<li>
-					<router-link to="/movie" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >電影</router-link>
-				</li>
-				<li>
-					<router-link to="/relationship" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >感情</router-link>
-				</li>
 
-				<li>
-					<router-link to="/game" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >遊戲</router-link>
-				</li>
-				<li>
-					<router-link to="/acg" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >動漫</router-link>
-				</li>
-			</ul>
-			<br>
-
-			<p style="color:hsla(0,0%,100%,.6)">校園看板</p>
-			<ul>
-				<li>
-					<router-link to="/nctu" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >交通大學</router-link>
-				</li>
-				<li>
-					<router-link to="/ncku" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >成功大學</router-link>
-				</li>
-				<li>
-					<router-link to="/ntou" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >海洋大學</router-link>
-				</li>
-				<li>
-					<router-link to="/ntu" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >台灣大學</router-link>
-				</li>
-				<li>
-					<router-link to="/nccu" @click.native="drawerVisibility = false" style="font-size:20px;color:hsla(0,0%,100%,.6);" >政治大學</router-link>
-				</li>
+			<p @click="dosomething('type1')" style="color:hsla(0,0%,100%,.6);margin:10px">分類看板</p>
+			<transition name="fade">
+			  	<ul :style="type1">
+					<li v-for="f in forums">
+						<router-link class="forum" :to="f.alias" @click.native="drawerVisibility = false" >{{f.name}}</router-link>
+					</li>
 				</ul>
-		  <!--
-		<group title="" style="margin-top:20px;">
-		  <cell title="全部" link="/demo"  @click.native="drawerVisibility = false"  style="color:rgb(128,153,167);background-color:rgb(0,50,78);">
-		  </cell>
-		  <cell title="Github" link="http://github.com/realdennis" value="Star me" @click.native="drawerVisibility = false"  style="color:rgb(128,153,167);background-color:rgb(0,50,78);">
-		  </cell>	
-		</group>
+			</transition>
 
-		<group title="訂閱看板" style="margin-top:20px;">
-		  <cell title="Demo" link="/demo" value="演示" @click="drawerVisibility = false">
-		  </cell>
-		 	<cell title="Buy me a coffee" link="project/donate" @click="drawerVisibility = false">
-		  </cell>
-		  <cell title="Github" link="http://github.com/airyland/vux" value="Star me" @click="drawerVisibility = false">
-		  </cell>
-		</group>
-		<group title="校園看板">
-		</group>
-		-->
+			<p @click="dosomething('type2')" style="color:hsla(0,0%,100%,.6); margin:10px">校園看板</p>
+			<transition name="fade">
+				<ul :style="type2">
+					<li v-for="s in schools">
+						<router-link class="forum" :to="s.alias" @click.native="drawerVisibility = false"  >{{s.name}}</router-link>
+					</li>
+				</ul>
+			</transition>
 		</div>
 
 		<div id="router-post">
@@ -95,19 +56,27 @@
 </template>
 
 <script>
-import { XHeader,Drawer,Group,Cell,Radio,ViewBox } from 'vux'
+import { XHeader,Drawer,Group,Cell,Radio } from 'vux'
+import school from './components/school.json'
+import forum from './components/forum.json'
 
 export default {
   name: 'app',
   components: {
-    XHeader,Drawer,Group,Cell,Radio,ViewBox
+    XHeader,Drawer,Group,Cell,Radio
   },
   data(){
   	return{
     	drawerVisibility: false,
     	showMode:'push',
-      check:''
+      	check:'',
+      	schools:school,
+      	forums:forum,
+      	type1:'',
+      	type2:''
   	}
+  },
+  created(){
   },
   methods:{
     isShowNav () {
@@ -116,6 +85,13 @@ export default {
       }
       return true
     },
+    dosomething(type){
+    	if(type==="type1"){
+    		this.type1===''?this.type1='display:none':this.type1='';
+    	}else{
+    		this.type2===''?this.type2='display:none':this.type2='';
+    	}
+    }
   }
 }
 </script>
@@ -147,9 +123,17 @@ li {
 
 #router-post {
 	padding-top:46px;
-	height:100%;
+	height: 100%;
 	margin:0 10px;
 	overflow-x:hidden;
 	overflow-y:scroll;
+	-webkit-overflow-scrolling:touch;
+}
+
+.forum{
+	font-size:15px;color:hsla(0,0%,100%,.6);
+}
+.forum:hover{
+	color:pink
 }
 </style>

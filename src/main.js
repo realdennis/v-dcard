@@ -4,10 +4,11 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/HelloFromVux'
+import Home from './components/ArticalList'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
+import 'iview/dist/styles/iview.css';
 Vue.use(VueRouter)
 Vue.use(VueAxios,axios)
 

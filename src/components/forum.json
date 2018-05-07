@@ -1,0 +1,370 @@
+[
+    {
+        "alias": "timecapsule",
+        "name": "時光膠囊",
+        "subcategories": []
+    },
+    {
+        "alias": "vehicle",
+        "name": "汽機車",
+        "subcategories": [
+            "保養",
+            "改裝",
+            "購車選擇",
+            "配件部品",
+            "車禍處理"
+        ]
+    },
+    {
+        "alias": "language",
+        "name": "語言",
+        "subcategories": [
+            "英語",
+            "日語",
+            "韓語",
+            "歐語"
+        ]
+    },
+    {
+        "alias": "freshman",
+        "name": "新生季",
+        "subcategories": []
+    },
+    {
+        "alias": "father",
+        "name": "父親節",
+        "subcategories": []
+    },
+    {
+        "alias": "relationship",
+        "name": "感情",
+        "subcategories": [
+            "曖昧",
+            "告白",
+            "閃光",
+            "劈腿",
+            "失戀",
+            "分手"
+        ]
+    },
+    {
+        "alias": "girl",
+        "name": "女孩",
+        "subcategories": [
+            "網購",
+            "髮型",
+            "心事"
+        ]
+    },
+    {
+        "alias": "makeup",
+        "name": "美妝",
+        "subcategories": [
+            "底妝",
+            "眼妝",
+            "唇彩",
+            "保養",
+            "情報"
+        ]
+    },
+    {
+        "alias": "dressup",
+        "name": "穿搭",
+        "subcategories": [
+            "日常",
+            "正式",
+            "情侶",
+            "鞋款"
+        ]
+    },
+    {
+        "alias": "funny",
+        "name": "有趣",
+        "subcategories": []
+    },
+    {
+        "alias": "rainbow",
+        "name": "彩虹",
+        "subcategories": [
+            "心情",
+            "議題"
+        ]
+    },
+    {
+        "alias": "marvel",
+        "name": "靈異",
+        "subcategories": [
+            "親身經歷",
+            "海龜湯",
+            "連載"
+        ]
+    },
+    {
+        "alias": "boy",
+        "name": "男孩",
+        "subcategories": [
+            "表特",
+            "軍旅",
+            "心事"
+        ]
+    },
+    {
+        "alias": "horoscopes",
+        "name": "星座",
+        "subcategories": [
+            "占卜",
+            "心理測驗",
+            "白羊",
+            "金牛",
+            "雙子",
+            "巨蟹",
+            "獅子",
+            "處女",
+            "天秤",
+            "天蠍",
+            "射手",
+            "摩羯",
+            "水瓶",
+            "雙魚"
+        ]
+    },
+    {
+        "alias": "food",
+        "name": "美食",
+        "subcategories": [
+            "食譜",
+            "食記",
+            "評比",
+            "超商"
+        ]
+    },
+    {
+        "alias": "mood",
+        "name": "心情",
+        "subcategories": []
+    },
+    {
+        "alias": "pet",
+        "name": "寵物",
+        "subcategories": [
+            "協尋",
+            "狗",
+            "貓",
+            "小動物",
+            "爬蟲",
+            "水族"
+        ]
+    },
+    {
+        "alias": "handicrafts",
+        "name": "手作",
+        "subcategories": [
+            "手創",
+            "廢物利用",
+            "繪畫",
+            "紙藝",
+            "鋼筆",
+            "工藝"
+        ]
+    },
+    {
+        "alias": "trending",
+        "name": "時事",
+        "subcategories": [
+            "新聞",
+            "討論",
+            "爆料",
+            "社論"
+        ]
+    },
+    {
+        "alias": "talk",
+        "name": "閒聊",
+        "subcategories": [
+            "理財",
+            "醫療",
+            "法律"
+        ]
+    },
+    {
+        "alias": "acg",
+        "name": "動漫",
+        "subcategories": [
+            "情報",
+            "心得",
+            "推坑",
+            "腐",
+            "同人",
+            "COS"
+        ]
+    },
+    {
+        "alias": "game",
+        "name": "遊戲",
+        "subcategories": [
+            "LOL",
+            "OW",
+            "手遊"
+        ]
+    },
+    {
+        "alias": "pokemon",
+        "name": "寶可夢",
+        "subcategories": []
+    },
+    {
+        "alias": "movie",
+        "name": "影劇",
+        "subcategories": [
+            "情報",
+            "電影",
+            "臺灣",
+            "韓國",
+            "歐美",
+            "日本",
+            "中國"
+        ]
+    },
+    {
+        "alias": "photography",
+        "name": "攝影",
+        "subcategories": [
+            "底片",
+            "手機",
+            "單眼",
+            "器材"
+        ]
+    },
+    {
+        "alias": "3c",
+        "name": "3C",
+        "subcategories": [
+            "電腦",
+            "手機",
+            "音響",
+            "教學"
+        ]
+    },
+    {
+        "alias": "job",
+        "name": "工作",
+        "subcategories": [
+            "徵才",
+            "經驗分享",
+            "職業介紹",
+            "勞工權益"
+        ]
+    },
+    {
+        "alias": "music",
+        "name": "音樂",
+        "subcategories": [
+            "創作",
+            "東洋",
+            "西洋",
+            "樂器"
+        ]
+    },
+    {
+        "alias": "sport",
+        "name": "運動",
+        "subcategories": [
+            "健身",
+            "籃球",
+            "棒球",
+            "排球"
+        ]
+    },
+    {
+        "alias": "travel",
+        "name": "旅遊",
+        "subcategories": [
+            "臺灣",
+            "日韓",
+            "亞洲",
+            "歐美"
+        ]
+    },
+    {
+        "alias": "mother",
+        "name": "母親節",
+        "subcategories": []
+    },
+    {
+        "alias": "book",
+        "name": "書籍",
+        "subcategories": [
+            "教科書",
+            "小說"
+        ]
+    },
+    {
+        "alias": "studyabroad",
+        "name": "留學",
+        "subcategories": [
+            "申請",
+            "生活",
+            "考試",
+            "打工度假"
+        ]
+    },
+    {
+        "alias": "literature",
+        "name": "詩文",
+        "subcategories": [
+            "新詩",
+            "散文",
+            "小說",
+            "詞創"
+        ]
+    },
+    {
+        "alias": "exam",
+        "name": "考試",
+        "subcategories": [
+            "轉學考",
+            "國考",
+            "重考",
+            "考古題"
+        ]
+    },
+    {
+        "alias": "course",
+        "name": "課程",
+        "subcategories": []
+    },
+    {
+        "alias": "bugreport",
+        "name": "臨時回報",
+        "subcategories": []
+    },
+    {
+        "alias": "ecofriendly",
+        "name": "無痕飲食",
+        "subcategories": []
+    },
+    {
+        "alias": "sex",
+        "name": "西斯",
+        "subcategories": [
+            "創作",
+            "知識",
+            "圖文"
+        ]
+    },
+    {
+        "alias": "dcard",
+        "name": "Dcard",
+        "subcategories": []
+    },
+    {
+        "alias": "whysoserious",
+        "name": "廢文",
+        "subcategories": []
+    },
+    {
+        "alias": "graduate",
+        "name": "畢業季",
+        "subcategories": []
+    }
+]
