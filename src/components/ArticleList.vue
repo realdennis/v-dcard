@@ -1,9 +1,16 @@
 <template>
-  <div id="article">
-  <!-- Allpost -->
+  <div id="article" >
+  <!-- Allpost -->       
+    <tab :line-width=2 active-color='rgb(86, 167, 212)' v-model="index">
+        <tab-item v-for="item in tabList" 
+                  :key="item.index" 
+                  @on-item-click="popular = item.popular">
+                {{item.name}}</tab-item>
+    </tab>
+
     <div v-infinite-scroll="getPost" infinite-scroll-disabled="busy">
       <div class="post" v-for="p in posts" @click="clickPost(p.id)">
-        <span class="gender">{{p.gender}}</span>
+        <span :style="colorful(p.gender)" class="gender">{{p.gender}}</span>
         <span class="forumName">{{p.forumName}}</span>
         <span class="school">{{p.school}}</span>
         <span class="school" v-if="!p.school">匿名</span>
@@ -70,9 +77,13 @@ export default {
     this.board = this.$route.params.board;
     //this.board = board;
   },
-  props:['popular'],
   data () {
     return {
+      popular:true,
+      index: 0,
+      tabList:[{index:0, name:'熱門', popular:true,},
+                {index:1, name:'最新', popular:false}],
+
       board:undefined,
       msg: 'Hello World!',
       posts:[],
@@ -84,6 +95,12 @@ export default {
     }
   },
   methods:{
+    colorful(g){
+      if(g==='F') return 'color:rgb(255,192,203);'
+      else if(g==='M') return 'color:rgb(30,144,255);'
+
+      else return
+    },
     clickPost(id){
       this.$router.push('/post/'+id)
     },
@@ -96,8 +113,7 @@ export default {
       if(this.articleLength<30 && this.before!==null ) return //unusual req
       this.loading=true;
 
-      const CORS = 'https://c2250e18.ngrok.io/';
-      let api = CORS + 'https://www.dcard.tw/_api/';
+      let api = this.CORS + 'https://www.dcard.tw/_api/';
       if(this.board!=undefined) api = api + 'forums/' + this.board + '/';
       let url = api + 'posts'
 
@@ -158,7 +174,7 @@ export default {
   margin: 0px 0px 8px;
 }
 .excerpt {    
-  font-size: 12px;
+  font-size: 13px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -188,6 +204,7 @@ export default {
 }
 
 .post {
+  background-color: white;
   border-bottom: 1px solid #dedede;
   padding:15px 10px;
   margin:0 0px;

@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113872741-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-113872741-5');
+    </script>
+    
     <meta charset="utf-8">
+        <!--For PWA-->
+    <link rel="shortcut icon" type="image/png" href="./static/icon/favicon.ico"/>
+    <link rel="manifest" href="./static/manifest.json">
+    <link rel="apple-touch-icon" href="./static/icon/apple-icon.png">  
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Dcard-pwa">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Dcard-pwa">
+
+  <!--For Facebook-->
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, user-scalable=0">
+    <meta name="description" content="基於Vue.js實作的Dcard漸進式網頁應用、單頁富應用。">
+    <meta name="author" content="@realdennis">
+    <meta property="og:image" content="https://realdennis.github.io/v-dcard/static/logo.png" />
+
+
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>v-dcard</title>
+    <title>Dcard-pwa</title>
   </head>
   <body>
     <div id="app-box"></div>
     <!-- built files will be auto injected -->
+    <noscript>Your browser does not support JavaScript!</noscript>
   </body>
 </html>

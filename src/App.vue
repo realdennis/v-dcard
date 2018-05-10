@@ -28,7 +28,7 @@
 					<router-link class="forum" to="/" @click.native="drawerVisibility = false" >全部</router-link>
 				</li>
 				<li>
-					<a class="forum" href="https://github.com/realdennis" @click="drawerVisibility = false" >Github</a>
+					<a class="forum" href="https://github.com/realdennis/v-dcard" @click="drawerVisibility = false" >Github</a>
 				</li>
 			</ul>
 
@@ -101,7 +101,6 @@ export default {
 #app{
 	margin:0 auto;
 }
-
 body {
   box-sizing: border-box;
   background-color: #fbf9fe;
@@ -114,8 +113,6 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  -webkit-user-select: none;
-  -moz-user-select: none;
 }
 
 ul {

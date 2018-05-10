@@ -4,10 +4,12 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
-import Home from './components/MainFrame'
+import Home from './components/ArticleList'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import post from './components/postContent'
+
+Vue.prototype.CORS = process.env.CORS || 'https://cors-realdennis.herokuapp.com/';
 
 Vue.use(VueRouter)
 Vue.use(VueAxios,axios)
