@@ -8,6 +8,7 @@ import Home from './components/ArticleList'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import post from './components/postContent'
+require('vue2-animate/dist/vue2-animate.min.css')
 
 Vue.prototype.CORS = process.env.CORS || 'https://cors-realdennis.herokuapp.com/';
 

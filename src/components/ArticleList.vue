@@ -9,19 +9,22 @@
     </tab>
 
     <div v-infinite-scroll="getPost" infinite-scroll-disabled="busy">
-      <div class="post" v-for="p in posts" @click="clickPost(p.id)">
-        <span :style="colorful(p.gender)" class="gender">{{p.gender}}</span>
-        <span class="forumName">{{p.forumName}}</span>
-        <span class="school">{{p.school}}</span>
-        <span class="school" v-if="!p.school">匿名</span>
-        <h3 class="title">{{p.title}}</h3>
-        <p class="excerpt">{{p.excerpt}}</p>
-        <div style="opacity: .35;">
-          <span class="likeCount">{{p.likeCount}} Likes</span>
-          <span>, </span>
-          <span class="commentCount">{{p.commentCount}} comments</span>
+
+      <transition-group name="fadeUp" tag="div">
+        <div class="post" v-for="(p,key) in posts" :key="key" @click="clickPost(p.id)">
+          <span :style="colorful(p.gender)" class="gender">{{p.gender}}</span>
+          <span class="forumName">{{p.forumName}}</span>
+          <span class="school">{{p.school}}</span>
+          <span class="school" v-if="!p.school">匿名</span>
+          <h3 class="title">{{p.title}}</h3>
+          <p class="excerpt">{{p.excerpt}}</p>
+          <div style="opacity: .35;">
+            <span class="likeCount">{{p.likeCount}} Likes</span>
+            <span>, </span>
+            <span class="commentCount">{{p.commentCount}} comments</span>
+          </div>
         </div>
-      </div>
+      </transition-group>
     </div>
 
     <div  v-if="loading==true" style="text-align:center">

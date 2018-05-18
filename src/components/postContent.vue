@@ -70,21 +70,23 @@
   	<div v-infinite-scroll="getComments" infinite-scroll-disabled="busy" class="commentEntry">
       <div class="comment">
       	<span style="opacity:.35">最新回應</span>
-      	<div class="content" v-for="c in comments">
-      		<div>
-		        <span :style="colorful(content.gender)" class="gender">{{c.gender}}</span>
-		        <span class="school">{{c.school}}</span>
-		        <span class="school" v-if="!c.school">匿名</span>
-		      </div>
-  		    <div class="info">
-  		    	<span class="floor">B{{c.floor}}</span>
-  		    	<span class="time">{{ beautyTime(c.createdAt) }}</span>
-  		    </div>
-  		    <div>
-  		    	<pre>{{c.content}}</pre>
-  		   		 <p class="likeCount" style="opacity:.35;">{{c.likeCount}} likes</p>
-  		    </div>
-        </div>
+        <transition-group name="fadeUp" tag="div">
+        	<div class="content" v-for="(c,key) in comments" :key="key">
+        		<div>
+  		        <span :style="colorful(content.gender)" class="gender">{{c.gender}}</span>
+  		        <span class="school">{{c.school}}</span>
+  		        <span class="school" v-if="!c.school">匿名</span>
+  		      </div>
+    		    <div class="info">
+    		    	<span class="floor">B{{c.floor}}</span>
+    		    	<span class="time">{{ beautyTime(c.createdAt) }}</span>
+    		    </div>
+    		    <div>
+    		    	<pre>{{c.content}}</pre>
+    		   		 <p class="likeCount" style="opacity:.35;">{{c.likeCount}} likes</p>
+    		    </div>
+          </div>
+        </transition-group>
 	    </div>
     	<div v-if="comment_loading==true" style="text-align:center">  	
     	      <br>
