@@ -54,8 +54,10 @@
 		</div>
 
 		<div id="router-post">
-			<router-view></router-view>
+			<router-view/>
 		</div>
+
+		
 	</drawer>
   </div>
 </template>

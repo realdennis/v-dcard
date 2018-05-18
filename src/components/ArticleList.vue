@@ -10,8 +10,8 @@
 
     <div v-infinite-scroll="getPost" infinite-scroll-disabled="busy">
 
-      <transition-group name="fadeUp" tag="div">
-        <div class="post" v-for="(p,key) in posts" :key="key" @click="clickPost(p.id)">
+      <transition-group name="fade" tag="div">
+        <div class="post" style="animation-duration: .7s" v-for="(p,key) in posts" :key="key" @click="clickPost(p.id)">
           <span :style="colorful(p.gender)" class="gender">{{p.gender}}</span>
           <span class="forumName">{{p.forumName}}</span>
           <span class="school">{{p.school}}</span>

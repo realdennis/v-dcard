@@ -33,7 +33,7 @@
 	        </div>
         </div>
       </div>
-  	</div>
+    </div>
 
   	<div v-if="popular_comments.length!=0" class="commentEntry">
 
@@ -49,6 +49,7 @@
 
       <div class="comment" v-else>
       	<span style="opacity: .35;">熱門回應</span>
+
       	<div class="content" v-for="pc in popular_comments">
       		<div>
 		        <span :style="colorful(content.gender)" class="gender">{{pc.gender}}</span>
@@ -70,8 +71,8 @@
   	<div v-infinite-scroll="getComments" infinite-scroll-disabled="busy" class="commentEntry">
       <div class="comment">
       	<span style="opacity:.35">最新回應</span>
-        <transition-group name="fadeUp" tag="div">
-        	<div class="content" v-for="(c,key) in comments" :key="key">
+        <transition-group name="fade" tag="div">
+        	<div style="animation-duration: .7s" class="content" v-for="(c,key) in comments" :key="key">
         		<div>
   		        <span :style="colorful(content.gender)" class="gender">{{c.gender}}</span>
   		        <span class="school">{{c.school}}</span>
