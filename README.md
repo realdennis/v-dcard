@@ -1,6 +1,8 @@
 
 # v-dcard
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/realdennis/v-dcard.svg)](https://greenkeeper.io/)
+
 基於Vue的前端框架以及強大的Vux組件，實作Dcard的漸進式網頁應用(_progressive web application_)，其中用到了包括代理伺服器、_Axios_、_infinite-scroll_ 組件。
 
 	Dcard擁有其站所有文章/看板閱讀權利，若其有要求，隨時會關閉代理伺服器。
