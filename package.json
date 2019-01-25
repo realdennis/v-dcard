@@ -2,7 +2,7 @@
   "name": "v-dcard",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "realdennis <evolon688@gmail.com>",
+  "author": "realdennis",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --host 0.0.0.0 --inline --progress --config build/webpack.dev.conf.js",
